@@ -1,22 +1,37 @@
+
+
+
 //Question1
-function User(name){
-    this.name = name;
-    this.stepsWalked = function (steps){
+// Create a User object with properties like name, stepsWalked (an array of daily steps), and a method totalSteps() that calculates and
+//  returns the total number of steps walked. Add another method averageSteps() that returns the average steps per day.
+
+//Pseudocode
+//step1. Created an object User with ptoperties name, stepsWalked which is an aray of daily steps walked 
+//step2 Added a method to the user object totalSteps() 
+//step3 Added a method averageSteps() to the user object
+//Step 4 Calculated the steps walked inside the total stepsWalked() method by first creating a variable sume that will hold the current sum in the array of stepsWalked
+//step5 Used a reduce method to calculate the total sume of the steps walked and returned the total steps walked.
+//step 6 calculated the average steps walked by taking taking the result I got from the totalStepsWalked() method and divide by the length of the stepsWalked array
+// ste
+
+const User ={
+    name: "Belise",
+    stepsWalked: function(steps){
         return steps.reduce((step, currentStep) => step + currentStep, 0)
- 
-    }
-    this.averageSteps = function (steps){
+    },
+    averageSteps: function(steps){
         const sum = this.stepsWalked(steps);
-        const average = sum/ steps.length;
-        return average
+                const average = sum/ steps.length;
+                return average
     }
 }
 
-const user = new User("Belize");
-console.log({user});
+console.log(User.name);
 
-console.log(user.stepsWalked([2,3,4,5,67]));
-console.log(user.averageSteps([1,2,3,4,5,6]));
+console.log(User.stepsWalked([2,3,4,5,67]));
+console.log(User.averageSteps([1,2,3,4,5,67]));
+
+
 
 //question2
 
@@ -41,25 +56,42 @@ console.log(recipe.isQuickMeal())
 
 
 //question3
+// Create a Car object with properties like model, mileage, and serviceHistory (an array of service dates). Add a method addService(date)
+//  to add a new service record, and lastServiceDate() to return the most recent service date.
 
-function Car(model, mileage, serviceHistory){
-    this.model = model;
-    this.mileage = mileage;
-    this.serviceHistory = serviceHistory
-    this.addService = function(date){
-        console.log(`this is a ${this.model} ${mileage} ${date}`)
-        serviceHistory = serviceHistory.push(date)
-    }
 
-    this.lastService = function(){
-        return this.serviceHistory.at(-1)
+
+
+
+
+//pseudo code
+// step1 Created car object and added the it's properties model,mileage,and serviceHistory which is an array of service dates
+//step2  created the object methods addService method that takes in date and lastService method()
+//steps3 Added new date to the addService method that stores the new date in the service history using push() array method
+//step4 Returned the most recent service in the lastServiceDate() method using pop() to remove the last item
+// step5 Invoked the the methods using the object name 
+// step6 Printed the output
+
+
+const Car = {
+    model: "Land cruizer",
+    mileage: "30km/hr",
+    serviceHistory: ["june 4th 2026", "September 23rd 2026"],
+    addService: function (date){
+        console.log(`this is a ${this.model} ${this.mileage} ${this.date}`)
+        this.serviceHistory = this.serviceHistory.push(date)
+    },
+    lastService: function(){
+      return this.serviceHistory.pop()
     }
+    
 }
-const newCar = new Car("mercede", "30km/hr", ["june 4th 2026", "September 23rd 2026"])
-console.log(newCar)
+Car.addService("November 4th 2026")
+console.log(Car.lastService())
 
-newCar.addService("November 4th 2026")
-console.log(newCar.lastService())
+
+
+
 
 //question4
 
