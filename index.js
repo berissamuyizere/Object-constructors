@@ -89,3 +89,23 @@ console.log(playlist)
 playlist.addSong("Bumm")
 playlist.removeSong("2002")
 playlist.listSong()
+
+
+//question5
+
+function Course(title, lessons, completeLessons){
+    this.title = title;
+    this.lessons = lessons;
+    this.completeLessons = completeLessons
+    this.markComplete = function(lesson){
+        completeLessons = completeLessons.push(lesson)
+    }
+    this.getProgress = function(){
+        console.log(`${completeLessons} out of ${lessons.length} lessons completed`)
+    }
+}
+
+const course = new Course("Software", ["Java", "Kotlin", "Python", "QA", "NYJ", "PM"], ["Java", "QA", "PM"])
+console.log(course)
+course.markComplete(["Kotlin"])
+course.getProgress()
